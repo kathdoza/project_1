@@ -54,3 +54,21 @@ footer {
     background: #bbbbbb
 
 }
+
+/* for the choices display after searching for an ingredient */
+.choices {
+    border: black 2px solid; 
+    border-radius: 5%;
+    margin-bottom: 10px;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    align-content: center;
+    background-color: white;
+    color: black;
+}
+
+.choices:hover{
+    background-color: black;
+    color: white;
+}
