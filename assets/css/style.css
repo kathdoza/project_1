@@ -1,0 +1,56 @@
+body {
+
+}
+
+
+#logo {
+    border: 10px solid black;
+    
+
+}
+
+.jumbotron {
+    margin-top: 3%
+
+
+} 
+
+
+.column {
+    float: left;
+    width: 45%;
+    padding: 10px;
+    height: 300px; 
+    
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+
+footer {
+    padding: 15px 0;
+    clear: both;
+    font-size: 12px;
+    color: red;
+    text-align: center;
+    background: #aaaaaa;
+    height: 30px 0;
+    border-radius: 5px
+}
+
+#food-data1 {
+    background: #aaaa;
+    margin-right: 10%
+  
+}
+
+
+#food-data2 {
+    background: #bbbbbb
+
+}
