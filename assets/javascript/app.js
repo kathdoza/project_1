@@ -17,16 +17,15 @@ $(document).ready(function () {
             var result = JSON.parse(response);
             console.log(result);
 
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < result.recipes.length; i++) {
                 var buttonTitle = result.recipes[i].title;
-                // console.log(title);
+                console.log(title);
                 var recipeID = result.recipes[i].recipe_id;
                 // console.log(recipeID);
                 var newButton = $("<button>").attr("class", "choices").text(buttonTitle);
                 newButton.attr("data-recipe", recipeID)
                 $(".jumbotron").prepend(newButton);
             }
-
         });
     });
     // gets recipe ID to get recipes for user's choice on F2F
