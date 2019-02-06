@@ -2,11 +2,13 @@ body {
 
 }
 
-
-.logo {
+header a {
+    margin-left: auto;
+    margin-right: auto;
+}
+#logo {
     border: 10px solid black;
-    width: 10%;
-
+    width: 25%;
 }
 
 .jumbotron {
