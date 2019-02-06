@@ -13,24 +13,15 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            // console.log(typeof response);
             $(".jumbotron").empty();
             var result = JSON.parse(response);
             console.log(result);
-
             for (var i = 0; i < result.recipes.length; i++) {
-                var title = result.recipes[i].title;
-                console.log(title);
-                
-                var newDiv = $("<div>");
-
-                newDiv.append("<p class='choices'>" + title + "</p>");
-
-                $(".jumbotron").prepend(newDiv);
-                
-
+                var buttonTitle = result.recipes[i].title;
+                console.log(buttonTitle);
+                var newButton = $("<button>").attr("class", "choices").text(buttonTitle);
+                $(".jumbotron").prepend(newButton);
             }
-
         });
     });
     // $(document).on("click", "#add-food", getIngredient);
