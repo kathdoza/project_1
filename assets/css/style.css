@@ -3,16 +3,14 @@ body {
 }
 
 
-#logo {
+.logo {
     border: 10px solid black;
-    
+    width: 10%;
 
 }
 
 .jumbotron {
     margin-top: 3%
-
-
 } 
 
 
@@ -46,7 +44,7 @@ footer {
 #food-data1 {
     background: #aaaa;
     margin-right: 10%
-  
+
 }
 
 
