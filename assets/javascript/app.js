@@ -8,6 +8,7 @@ $(document).ready(function () {
         var foods = [];
         var apiKey = "690178e9a1bd7c5314bc05fe6b77a9dd"
         var queryURL = "https://www.food2fork.com/api/search?key=" + apiKey + "&q=" + ingredient + "&sort=r&page=2";
+
         console.log(queryURL);
 
         $.ajax({
@@ -29,20 +30,30 @@ $(document).ready(function () {
             }
         });
     });
+    // gets recipe ID to get recipes for user's choice on F2F
     $(document).on("click", ".choices", getRecipes);
 
-    function getRecipes () {
+    function getRecipes() {
         var recipe = $(this).attr("data-recipe");
         console.log(recipe);
 
-        var queryURL = "https://www.food2fork.com/api/get?key=9727f5c2adff51679a6bf7e93ae216f6&rId=" + recipe + "&sort=r";
-
+        var queryURL = "https://www.food2fork.com/api/get?key=6085193110d842cc5f85203d6d4c5756&rId=" + recipe + "&sort=r";
+        console.log(queryURL)
         $.ajax({
-            url:queryURL,
+            url: queryURL,
             method: "GET"
-        }).then(function(response) { 
+
+        }).then(function (response) {
+            var result = JSON.parse(response);
+            console.log(result);
+
+            var imageURL = result.recipe.image_url;
+            console.log(imageURL);
+
+            var ingredients = result.recipe.ingredients;
+            console.log(ingredients);
         })
-    }
+    };
     // $(document).on("click", "#add-food", getIngredient);
     // $("#choices").on("click", function () {
 
