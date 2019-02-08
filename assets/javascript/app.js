@@ -48,6 +48,7 @@ var apiKey = "e61b4cdb21fa49a0a22d6e7a8f319240";
         $.ajax({
             url: queryURL,
             method: "GET"
+
         }).then(function (response) {
             var result = JSON.parse(response);
             console.log(result);
@@ -91,9 +92,23 @@ var apiKey = "e61b4cdb21fa49a0a22d6e7a8f319240";
             });
         });
     };
-
     // $(document).on("click", "#add-food", getIngredient);
     // $("#choices").on("click", function () {
 
     // })
+    function ingredientsCall() {
+    $.ajax({
+        url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
+        headers: {
+            "x-app-id": "9d90687a",
+            "x-app-key": "ce2d2319cdcd23cd6bf1f7cc07da62b9",
+            "x-remote-user-id": 0
+        },
+        "query": "chicken",
+        method: "POST"
+    }).then(function(response) {;
+        var ingredientResponse = JSON.parse(response);
+        console.log(ingredientResponse);
+    })
+    }
 });
