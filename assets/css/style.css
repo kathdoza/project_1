@@ -2,17 +2,17 @@ body {
 
 }
 
-
+header a {
+    margin-left: auto;
+    margin-right: auto;
+}
 #logo {
     border: 10px solid black;
-    
-
+    width: 25%;
 }
 
 .jumbotron {
     margin-top: 3%
-
-
 } 
 
 
@@ -45,13 +45,15 @@ footer {
 
 #food-data1 {
     background: #aaaa;
-    margin-right: 10%
-  
+    margin-right: 10%;
+    overflow: auto;
+
 }
 
 
 #food-data2 {
-    background: #bbbbbb
+    background: #bbbbbb;
+    overflow: auto;
 
 }
 
@@ -71,4 +73,84 @@ footer {
 .choices:hover{
     background-color: black;
     color: white;
+}
+
+/* for the nutriti labels */
+
+
+.image {
+  width: 250px;
+  float: left;
+  margin: 20px;
+}
+body {
+  font-size: small;
+  line-height: 1.4;
+}
+p {
+  margin: 0;
+}
+
+.performance-facts {
+  border: 1px solid black;
+  margin: 20px;
+  float: left;
+  width: 280px;
+  padding: 0.5rem;
+  background: white;
+}
+.performance-facts__title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0 0 0.25rem 0;
+}
+.performance-facts__header {
+  border-bottom: 10px solid black;
+  padding: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0;
+
+}
+.performance-facts__table {
+    width: 100%;
+    overflow: auto;
+}
+.performance-facts__table th{
+    font-weight: normal;
+    text-align: left;
+    padding: 0.25rem 0;
+    border-top: 1px solid black; 
+    border-width: 75%
+}
+.performance-facts__table td{
+    font-weight: normal;
+    text-align: left;
+    padding: 0.25rem 0;
+    border-top: 1px solid black; 
+    white-space: nowrap;
+    border-width: 75%
+}
+.blank-cell {
+    width: 1rem;
+    border-top: 0;
+}
+.thick-row th, td {
+    border-top-width: 5px;
+}
+.small-info {
+  font-size: 0.7rem;
+}
+
+
+.text-center {
+  text-align: center;
+}
+.thick-end {
+  border-bottom: 10px solid black;
+}
+.thin-end {
+  border-bottom: 1px solid black;
+}
+
+.dailyVal {
+    border-bottom: none;
 }

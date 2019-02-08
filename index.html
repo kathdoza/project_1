@@ -11,47 +11,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c55dfb6fec5f10011f261bd&product=sop'
-        async='async'></script>
-
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5c55dfb6fec5f10011f261bd&product=inline-share-buttons"></script>
 </head>
 
 <body>
-    <!--HEADING-->
-    <header id="mainheader">
-        <div class="container">
-            <a href="index.html" id="logo"><img src="https://i.pinimg.com/236x/33/04/e3/3304e35f47f81180e8c8b896b5d57332--knifes-forks.jpg"
-                    alt="logo" style="width:10%;"></a>
-        </div>
-
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+    <div class="container-fluid">
+        <header class="row">
+            <a href="index.html">
+                <img id="logo" src="assets/images/logo.png">
+            </a>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="https://github.com/kathdoza/project_1"><span class="glyphicon glyphicon-folder-close"></span>
-                                GitHub Repo</a></li>
-                        <li><a href="https://www.food2fork.com/about/api"><span class="glyphicon glyphicon-log-in"></span>
-                                Food2Fork API</a></li>
-                        <li><a href="https://www.nutritionix.com/business/api"><span class="glyphicon glyphicon-log-in"></span>
-                                Nutritionix API</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <div class="container">
+            </nav>
+        </header>
         <div class="row">
             <div class="col-lg-12">
                 <form id="form">
@@ -61,18 +46,14 @@
                 </form>
             </div>
         </div>
-
-
-        <div class="jumbotron jumbotron-fluid text-center">
-            <div class="container">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron jumbotron-fluid text-center">
                 <h1 class="display-4">In Or Out</h1>
                 <p class="lead">Eat Smart. Be Healthy.</p>
             </div>
         </div>
-
-        <br>
-
-
         <div class="row">
             <div class="column" id="food-data1">
                 <h2>Food2Fork</h2>
@@ -81,26 +62,147 @@
             </div>
             <div class="column" id="food-data2">
                 <h2>Nutritionix</h2>
-                <p><img src="https://cdn.vox-cdn.com/thumbor/qEn1Dj2MVNnZcj7MhYQ0-DhSFqI=/0x0:1400x1050/1400x1400/filters:focal(0x0:1400x1050):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/45522676/mcdonalds-fries.0.0.jpg"
-                        alt="fries" style="width:30%;"></p>
+
+                <section class="performance-facts">
+                    <header class="performance-facts__header">
+                        <h1 class="performance-facts__title">Nutrition Facts</h1>
+                        <p>Serving Size <div class="nutritionixServing"></div></p>
+                    </header>
+                    <table class="performance-facts__table">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="small-info">
+                                    Amount Per Serving
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Calories</b>
+                                    200
+                                </th>
+                                <td>
+                                    Calories from Fat
+                                    130
+                                </td>
+                            </tr>
+                            <tr class="thick-row dailyVal">
+                                <td colspan="3" class="small-info">
+                                    <b>% Daily Value*</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Total Fat</b>
+                                    14g
+                                </th>
+                                <td>
+                                    <b>22%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blank-cell">
+                                </td>
+                                <th>
+                                    Saturated Fat
+                                    9g
+                                </th>
+                                <td>
+                                    <b>22%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blank-cell">
+                                </td>
+                                <th>
+                                    Trans Fat
+                                    0g
+                                </th>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Cholesterol</b>
+                                    55mg
+                                </th>
+                                <td>
+                                    <b>18%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Sodium</b>
+                                    40mg
+                                </th>
+                                <td>
+                                    <b>2%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Total Carbohydrate</b>
+                                    17g
+                                </th>
+                                <td>
+                                    <b>6%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blank-cell">
+                                </td>
+                                <th>
+                                    Dietary Fiber
+                                    1g
+                                </th>
+                                <td>
+                                    <b>4%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blank-cell">
+                                </td>
+                                <th>
+                                    Sugars
+                                    14g
+                                </th>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr class="thick-end">
+                                <th colspan="2">
+                                    <b>Protein</b>
+                                    3g
+                                </th>
+                                <td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values
+                        may be higher or lower depending on your calorie needs:</p>
+
+                </section>
             </div>
         </div>
+        <div class="sharethis-inline-reaction-buttons"></div>
+        <div class="sharethis-inline-share-buttons"></div>
     </div>
-    <div class="sharethis-inline-reaction-buttons"></div>
-    <div class="sharethis-inline-share-buttons"></div>
-
-    </div>
-
-    <br>
-    <br>
-
-
-    <footer>
-        <div class="container">
+    <div class="container-fluid">
+        <footer>
             &copy; In Or Out
-        </div>
-    </footer>
-
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/kathdoza/project_1"><span class="glyphicon glyphicon-folder-close"></span>
+                        GitHub Repo</a></li>
+                <li><a href="https://www.food2fork.com/about/api"><span class="glyphicon glyphicon-log-in"></span>
+                        Food2Fork API</a></li>
+                <li><a href="https://www.nutritionix.com/business/api"><span class="glyphicon glyphicon-log-in"></span>
+                        Nutritionix API</a></li>
+            </ul>
+        </footer>
+    </div>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <script src=“//platform-api.sharethis.com/js/sharethis.js#property=&product=inline-share-buttons”> </script> </body>
+</body>
+
 </html>
