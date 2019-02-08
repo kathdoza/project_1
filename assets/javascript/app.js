@@ -1,12 +1,12 @@
 $(document).ready(function () {
+var apiKey = "e61b4cdb21fa49a0a22d6e7a8f319240";
 
     $("#add-food").on("click", function (event) {
         event.preventDefault();
 
         //this gets the options for different recipes
         var ingredient = $("#search-bar").val().trim();
-        var foods = [];
-        var queryURL = "https://www.food2fork.com/api/search?key=6085193110d842cc5f85203d6d4c5756&q=" + ingredient + "&sort=r&page=2";
+        var queryURL = "https://www.food2fork.com/api/search?key=" + apiKey + "&q=" + ingredient + "&sort=r&page=2";
         console.log(queryURL);
 
         $.ajax({
@@ -31,24 +31,28 @@ $(document).ready(function () {
     // gets recipe ID to get recipes for user's choice on F2F
     $(document).on("click", ".choices", getRecipes);
 
-    function getRecipes() {
-        var recipe = $(this).attr("data-recipe");
-        console.log(recipe);
+    var calories = 0;
+    var cholesterol = 0;
+    var dietaryFiber = 0;
+    var totalFat = 0;
+    var satFat = 0;
+    var sodium = 0;
+    var carbs = 0;
+    var sugars = 0;
 
-        var queryURL = "https://www.food2fork.com/api/get?key=6085193110d842cc5f85203d6d4c5756&rId=" + recipe + "&sort=r";
-        console.log(queryURL)
+    function getRecipes() {
+        var recipeID = $(this).attr("data-recipe");
+        console.log(recipeID);
+        var queryURL = "https://www.food2fork.com/api/get?key=" + apiKey + "&rId=" + recipeID + "&sort=r";
+
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             var result = JSON.parse(response);
             console.log(result);
-
             var imageURL = result.recipe.image_url;
-            console.log(imageURL);
-
             var ingredients = result.recipe.ingredients;
-            console.log(ingredients);
             
             $.ajax({
                 url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
@@ -62,11 +66,30 @@ $(document).ready(function () {
                     query: ingredients.join(', ')
                 }),
                 method: "POST"
-            }).then(function(response) {;
-                var ingredientResponse = JSON.parse(response);
-                console.log(ingredientResponse);
-            })
-        })
+            }).done(function(response) {
+                console.log(response.foods)
+                for (var i=0; i < response.foods.length; i++) {
+                    calories = parseInt(calories + response.foods[i].nf_calories);
+                    cholesterol = parseInt(cholesterol + response.foods[i].nf_cholesterol);
+                    dietaryFiber = parseInt(dietaryFiber + response.foods[i].nf_dietary_fiber);
+                    totalFat = parseInt(totalFat + response.foods[i].nf_total_fat);
+                    satFat = parseInt(satFat + response.foods[i].nf_saturated_fat);
+                    sodium = parseInt(sodium + response.foods[i].nf_sodium);
+                    carbs = parseInt(carbs + response.foods[i].nf_total_carbohydrate);
+                    sugars = parseInt(sugars + response.foods[i].nf_sugars);
+                }
+                console.log(calories, cholesterol, dietaryFiber, totalFat, satFat, sodium, carbs, sugars);
+                $(".jumbotron").empty();
+                $("#recipe-nutrition").html("<h3>Nutrition Facts:</h3><h4>Calories:</h4>" + calories
+                + "<h4>Total Fat:</h4>" + totalFat
+                + "<h4>Saturated Fat:</h4>" + satFat
+                + "<h4>Cholesterol:</h4>" + cholesterol
+                + "<h4>Sodium:</h4>" + sodium
+                + "<h4>Total Carbohydrates:</h4>" + carbs
+                + "<h4>Dietary Fiber:</h4>" + dietaryFiber
+                + "<h4>Sugars:</h4>" + sugars);
+            });
+        });
     };
 
     // $(document).on("click", "#add-food", getIngredient);
