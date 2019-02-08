@@ -8,7 +8,9 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/nutritionLabel-min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="assets/javascript/nutritionLabel-min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5c55dfb6fec5f10011f261bd&product=inline-share-buttons"></script>
     </head>
@@ -42,6 +44,7 @@
                         <label for="search-bar">
                         <input type="text" id="search-bar">
                         <input type="submit" id="add-food" class="btn btn-danger" value="Search">
+                        <p id="alert-text"></p>
                     </form>
                 </div>
             </div>
@@ -55,7 +58,7 @@
             </div>
             <div class="row">
                 <div class="column" id="recipe-nutrition"></div>
-                <div class="column" id="food-data2">
+                <div class="column" id="restaurant-nutrition">
                     <h2>Nutritionix</h2>
                     <p><img src="https://cdn.vox-cdn.com/thumbor/qEn1Dj2MVNnZcj7MhYQ0-DhSFqI=/0x0:1400x1050/1400x1400/filters:focal(0x0:1400x1050):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/45522676/mcdonalds-fries.0.0.jpg"
                             alt="fries" style="width:30%;"></p>
