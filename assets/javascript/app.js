@@ -100,6 +100,22 @@ $(document).ready(function () {
                     recipeProtein = parseInt(recipeProtein + response.foods[i].nf_protein);
                 }
                 $(".jumbotron").empty();
+
+                var recipeSatPerCal = Math.round((20 / recipeSatFat) * 100);
+                var recipeCholPerCal = Math.round((300 / recipeCholesterol) * 100);
+                var recipeSodPerCal = Math.round((2400 / recipeSodium) * 100);
+                var recipeCalFromFat = recipeTotalFat * 9;
+                var recipeFatPerCal = Math.round((65 / recipeTotalFat) * 100);
+                var recipeCarbPerCal = Math.round((300 / recipeCarbs) * 100);
+                var recipeFiberPerCal = Math.round((25 / recipeDietaryFiber) * 100);
+                
+                $("#recipe-fat-cals").html(recipeFatPerCal);
+                $("#recipe-carb-cals").html(recipeCarbPerCal);
+                $("#recipe-fiber-cals").html(recipeFiberPerCal);
+                $("#recipe-cals-from-fat").html("<b>" + recipeCalFromFat + "</b>");
+                $("#recipe-satfat-cals").html(recipeSatPerCal);
+                $("#recipe-chol-cals").html(recipeCholPerCal);
+                $("#recipe-sod-cals").html(recipeSodPerCal);
                 $("#recipe-calories").text(recipeCalories);
                 $("#recipe-cholesterol").text(recipeCholesterol);
                 $("#recipe-dietary-fiber").text(recipeDietaryFiber)
@@ -110,7 +126,7 @@ $(document).ready(function () {
                 $("#recipe-total-carbs").text(recipeCarbs);
                 $("#recipe-sugars").text(recipeSugars);
                 $("#recipe-protein").text(recipeProtein);
-                
+
             });
         });
     };
@@ -222,10 +238,10 @@ $(document).ready(function () {
             if (fatPerc == Infinity) {
                 $(".nutxFatPerc").html(0);
             }
-            if (carbPerc == Infinity) { 
+            if (carbPerc == Infinity) {
                 $(".nutxCarbPerc").html(0);
             }
-            if (fiberPerc == Infinity) { 
+            if (fiberPerc == Infinity) {
                 $(".nutxFiberPerc").html(fiberPerc);
             }
 
