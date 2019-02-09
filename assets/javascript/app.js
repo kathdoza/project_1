@@ -1,5 +1,13 @@
 $(document).ready(function () {
 
+    calories = 0;
+    cholesterol = 0;
+    dietaryFiber = 0;
+    totalFat = 0;
+    satFat = 0;
+    sodium = 0;
+    carbs = 0;
+    sugars = 0;
     var apiKey = "e61b4cdb21fa49a0a22d6e7a8f319240";
 
     var searchValid;
