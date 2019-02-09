@@ -96,8 +96,8 @@ footer {
 
 /* for the nutriti labels */
 
-.restaurantName, menuItem {
-  background: #aaaa;
+.restaurantName, .menuItem, #recipe-link {
+  background: #aaa;
   margin-right: 10%;
   overflow: auto;
   border-radius: 5px;
