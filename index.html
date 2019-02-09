@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Project-1</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,11 +15,12 @@
     </head>
 
     <body>
+        <!--HEADING-->
         <div class="container-fluid">
-            <header class="row">
-                <a href="index.html">
-                    <img id="logo" src="assets/images/logo.png">
-                </a>
+            <header class="row" id="logo">
+                <a href="index.html"></a>
+            </header>
+                <!--NAV-->
                 <nav class="navbar navbar-inverse">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -30,22 +32,26 @@
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.html"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="feedback.html"> <span class="glyphicon glyphicon-pencil"></span> Feedback</a></li>
                             </ul>
                         </div>
                     </div>
+                    <!--SEARCH BAR-->
+                    <div class="row text-center">
+                        <div class="col-lg-12">
+                            <form id="form">
+                                <label for="search-bar">
+                                <input type="text" id="search-bar">
+                                <input type="submit" id="add-food" class="btn btn-danger" value="Search">
+                                <p id="alert-text"></p>
+                            </form>
+                        </div>
+                    </div>
                 </nav>
-            </header>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form id="form">
-                        <label for="search-bar">
-                        <input type="text" id="search-bar">
-                        <input type="submit" id="add-food" class="btn btn-danger" value="Search">
-                        <p id="alert-text"></p>
-                    </form>
-                </div>
-            </div>
+        <!--JUMBOTRON-->
         </div>
         <div class="container">
             <div class="row">
@@ -54,6 +60,7 @@
                     <p class="lead">Eat Smart. Be Healthy.</p>
                 </div>
             </div>
+        <!--SEARCH RESULTS AREA-->
             <div class="row">
                 <div class="column" id="recipe-nutrition"></div>
                 <div class="column" id="restaurant-nutrition">
@@ -62,9 +69,11 @@
                             alt="fries" style="width:30%;"></p>
                 </div>
             </div>
+            <!--SHARE BUTTONS-->
             <div class="sharethis-inline-reaction-buttons"></div>
             <div class="sharethis-inline-share-buttons"></div>
         </div>
+            <!--FOOTER-->
         <div class="container-fluid">
             <footer>
                     &copy; In Or Out
