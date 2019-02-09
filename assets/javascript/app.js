@@ -1,14 +1,6 @@
 $(document).ready(function () {
 
-    calories = 0;
-    cholesterol = 0;
-    dietaryFiber = 0;
-    totalFat = 0;
-    satFat = 0;
-    sodium = 0;
-    carbs = 0;
-    sugars = 0;
-    var apiKey = "e61b4cdb21fa49a0a22d6e7a8f319240";
+    var apiKey = "81c527acf8813ceb9ac2721483d87f9a";
 
     var searchValid;
     function searchValidate() {
@@ -72,6 +64,17 @@ $(document).ready(function () {
             var imageURL = result.recipe.image_url;
             var ingredients = result.recipe.ingredients;
 
+            var recipeCalories = 0;
+            var recipeCholesterol = 0;
+            var recipeDietaryFiber = 0;
+            var recipeTotalFat = 0;
+            var recipeTransFat = 0;
+            var recipeSatFat = 0;
+            var recipeSodium = 0;
+            var recipeCarbs = 0;
+            var recipeSugars = 0;
+            var recipeProtein = 0;
+
             $.ajax({
                 url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
                 headers: {
@@ -87,25 +90,29 @@ $(document).ready(function () {
             }).done(function (response) {
                 console.log(response.foods)
                 for (var i = 0; i < response.foods.length; i++) {
-                    calories = parseInt(calories + response.foods[i].nf_calories);
-                    cholesterol = parseInt(cholesterol + response.foods[i].nf_cholesterol);
-                    dietaryFiber = parseInt(dietaryFiber + response.foods[i].nf_dietary_fiber);
-                    totalFat = parseInt(totalFat + response.foods[i].nf_total_fat);
-                    satFat = parseInt(satFat + response.foods[i].nf_saturated_fat);
-                    sodium = parseInt(sodium + response.foods[i].nf_sodium);
-                    carbs = parseInt(carbs + response.foods[i].nf_total_carbohydrate);
-                    sugars = parseInt(sugars + response.foods[i].nf_sugars);
+                    recipeCalories = parseInt(recipeCalories + response.foods[i].nf_calories);
+                    recipeCholesterol = parseInt(recipeCholesterol + response.foods[i].nf_cholesterol);
+                    recipeDietaryFiber = parseInt(recipeDietaryFiber + response.foods[i].nf_dietary_fiber);
+                    recipeTotalFat = parseInt(recipeTotalFat + response.foods[i].nf_total_fat);
+                    recipeTransFat = parseInt(recipeTransFat + response.foods[i].nf_trans_fat);
+                    recipeSatFat = parseInt(recipeSatFat + response.foods[i].nf_saturated_fat);
+                    recipeSodium = parseInt(recipeSodium + response.foods[i].nf_sodium);
+                    recipeCarbs = parseInt(recipeCarbs + response.foods[i].nf_total_carbohydrate);
+                    recipeSugars = parseInt(recipeSugars + response.foods[i].nf_sugars);
+                    recipeProtein = parseInt(recipeProtein + response.foods[i].nf_protein);
                 }
-                console.log(calories, cholesterol, dietaryFiber, totalFat, satFat, sodium, carbs, sugars);
                 $(".jumbotron").empty();
-                $("#recipe-nutrition").html("<h3>Nutrition Facts:</h3><h4>Calories:</h4>" + calories
-                    + "<h4>Total Fat:</h4>" + totalFat
-                    + "<h4>Saturated Fat:</h4>" + satFat
-                    + "<h4>Cholesterol:</h4>" + cholesterol
-                    + "<h4>Sodium:</h4>" + sodium
-                    + "<h4>Total Carbohydrates:</h4>" + carbs
-                    + "<h4>Dietary Fiber:</h4>" + dietaryFiber
-                    + "<h4>Sugars:</h4>" + sugars);
+                $("#recipe-calories").text(recipeCalories);
+                $("#recipe-cholesterol").text(recipeCholesterol);
+                $("#recipe-dietary-fiber").text(recipeDietaryFiber)
+                $("#recipe-total-fat").text(recipeTotalFat);
+                $("#recipe-trans-fat").text(recipeTransFat);
+                $("#recipe-sat-fat").text(recipeSatFat);
+                $("#recipe-sodium").text(recipeSodium);
+                $("#recipe-total-carbs").text(recipeCarbs);
+                $("#recipe-sugars").text(recipeSugars);
+                $("#recipe-protein").text(recipeProtein);
+                
             });
         });
     };
