@@ -1,19 +1,28 @@
 body {
+    background-image: url("../images/body1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
-header a {
-    margin-left: auto;
-    margin-right: auto;
-}
+
 #logo {
-    border: 10px solid black;
-    width: 25%;
+    background-image: url("../images/header2.jpg"); width: 1644px; height: 300px; 
+    border: 2px solid gray;
+    margin-left: 3px;
+    margin-right: 2px;
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+   
 }
 
 .jumbotron {
-    margin-top: 3%
+    margin-top: 3%;
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+    opacity: 0.9;
+
 } 
+
 
 
 .column {
@@ -22,12 +31,20 @@ header a {
     padding: 10px;
     height: 300px; 
     
+    
 }
   
 .row:after {
     content: "";
     display: table;
     clear: both;
+    
+
+}
+
+#search-bar {
+    border-radius: 5px;
+
 
 }
 
@@ -38,22 +55,35 @@ footer {
     font-size: 12px;
     color: red;
     text-align: center;
-    background: #aaaaaa;
+    background: #aaaa;
     height: 30px 0;
-    border-radius: 5px
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+    
 }
 
 #food-data1 {
     background: #aaaa;
-    margin-right: 10%
+    margin-right: 10%;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
 
 }
 
 
 #food-data2 {
-    background: #bbbbbb
+    background: #aaaa;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
 
 }
+
+@media screen and (max-width: 700px) {
+    #logo {
+      width: 100%;
+    }
+    
+  }
 
 /* for the choices display after searching for an ingredient */
 .choices {
@@ -72,3 +102,4 @@ footer {
     background-color: black;
     color: white;
 }
+
