@@ -1,6 +1,14 @@
 $(document).ready(function () {
 
-    var apiKey = "e61b4cdb21fa49a0a22d6e7a8f319240";
+    calories = 0;
+    cholesterol = 0;
+    dietaryFiber = 0;
+    totalFat = 0;
+    satFat = 0;
+    sodium = 0;
+    carbs = 0;
+    sugars = 0;
+    var apiKey = "6085193110d842cc5f85203d6d4c5756";
 
     var searchValid;
     function searchValidate() {
@@ -107,12 +115,12 @@ $(document).ready(function () {
 
     function getMenuItem() {
         var menuItem = $(this).text();
-        // console.log(menuItem);
+        console.log(menuItem);
         $.ajax({
             url: "https://trackapi.nutritionix.com/v2/search/instant",
             headers: {
-                "x-app-id": "9d90687a",
-                "x-app-key": "ce2d2319cdcd23cd6bf1f7cc07da62b9"
+                "x-app-id": "40686332",
+                "x-app-key": "69eb15b5cbbdfc84f2451559c226b7b1"
             },
             data: {
                 query: menuItem,
@@ -134,6 +142,11 @@ $(document).ready(function () {
 
             console.log(restaurant);
             console.log(menuItemName);
+
+            $(".restaurantName").html("<b>Restaurant: </b>" + restaurant);
+            $(".menuItem").html("<b>Menu Item</b>" + menuItemName);
+
+
 
             if (item.branded[i].full_nutrients.length == 14) {
                 var sodium = item.branded[i].full_nutrients[8].value;

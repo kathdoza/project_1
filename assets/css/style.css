@@ -65,25 +65,18 @@ footer {
 #food-data1 {
     background: #aaaa;
     margin-right: 10%;
-<<<<<<< HEAD
     overflow: auto;
-=======
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
->>>>>>> 05109bd9524bcab64af58e377f42030fa95d18c9
-
 }
 
 
 #food-data2 {
-<<<<<<< HEAD
     background: #bbbbbb;
     overflow: auto;
-=======
     background: #aaaa;
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
->>>>>>> 05109bd9524bcab64af58e377f42030fa95d18c9
 
 }
 
@@ -112,7 +105,7 @@ footer {
     color: white;
 }
 
-<<<<<<< HEAD
+
 /* for the nutriti labels */
 
 body {
@@ -191,5 +184,3 @@ p {
 .percentage {
     float:right;
 }
-=======
->>>>>>> 05109bd9524bcab64af58e377f42030fa95d18c9

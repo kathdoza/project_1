@@ -1,62 +1,65 @@
-<!DOCTYPE html>
-<html>
+  <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Project-1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5c55dfb6fec5f10011f261bd&product=inline-share-buttons"></script>
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project-1</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5c55dfb6fec5f10011f261bd&product=inline-share-buttons"></script>
-</head>
-
-<body>
-    <div class="container-fluid">
-        <header class="row">
-            <a href="index.html">
-                <img id="logo" src="assets/images/logo.png">
-            </a>
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+    <body>
+        <!--HEADING-->
+        <div class="container-fluid">
+            <header class="row" id="logo">
+                <a href="index.html"></a>
+            </header>
+                <!--NAV-->
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="feedback.html"> <span class="glyphicon glyphicon-pencil"></span> Feedback</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html">Home</a></li>
-                        </ul>
+                    <!--SEARCH BAR-->
+                    <div class="row text-center">
+                        <div class="col-lg-12">
+                            <form id="form">
+                                <label for="search-bar">
+                                <input type="text" id="search-bar">
+                                <input type="submit" id="add-food" class="btn btn-danger" value="Search">
+                                <p id="alert-text"></p>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </header>
-        <div class="row">
-            <div class="col-lg-12">
-                <form id="form">
-                    <label for="search-bar">
-                        <input type="text" id="search-bar">
-                        <input type="submit" id="add-food" class="btn btn-danger" value="Search">
-                        <p id="alert-text"></p>
-                    </form>
+                </nav>
+        <!--JUMBOTRON-->
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron jumbotron-fluid text-center">
+                    <h1 class="display-4">In Or Out</h1>
+                    <p class="lead">Eat Smart. Be Healthy.</p>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="jumbotron jumbotron-fluid text-center">
-                <h1 class="display-4">In Or Out</h1>
-                <p class="lead">Eat Smart. Be Healthy.</p>
-            </div>
-        </div>
-        <div class="row">
+        <!--SEARCH RESULTS AREA-->
+            <div class="row">
             <div class="column" id="food-data1">
                 <h2>Food2Fork</h2>
                 <p><img src="https://www.nrn.com/sites/nrn.com/files/styles/article_featured_standard/public/sonic-mushroom-burger.gif?itok=epnLgURt"
@@ -64,6 +67,8 @@
             </div>
             <div class="column" id="food-data2">
                 <h2>Out Option</h2>
+                <p class="restaurantName"></p>
+                <p class="menuItem"></p>
 
                 <section class="performance-facts">
                     <header class="performance-facts__header">
@@ -163,7 +168,6 @@
                                 </th>
                                 <td>
                                     <b class="percentage"><span class="nutxFiberPerc"></span>%</b>
-                                </td>
                             </tr>
                             <tr>
                                 <td class="blank-cell">
@@ -189,25 +193,26 @@
                         may be higher or lower depending on your calorie needs:</p>
 
                 </section>
+                </div>
             </div>
+            <!--SHARE BUTTONS-->
+            <div class="sharethis-inline-reaction-buttons"></div>
+            <div class="sharethis-inline-share-buttons"></div>
         </div>
-        <div class="sharethis-inline-reaction-buttons"></div>
-        <div class="sharethis-inline-share-buttons"></div>
-    </div>
-    <div class="container-fluid">
-        <footer>
-            &copy; In Or Out
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/kathdoza/project_1"><span class="glyphicon glyphicon-folder-close"></span>
-                        GitHub Repo</a></li>
-                <li><a href="https://www.food2fork.com/about/api"><span class="glyphicon glyphicon-log-in"></span>
-                        Food2Fork API</a></li>
-                <li><a href="https://www.nutritionix.com/business/api"><span class="glyphicon glyphicon-log-in"></span>
-                        Nutritionix API</a></li>
-            </ul>
-        </footer>
-    </div>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-</body>
-
+            <!--FOOTER-->
+        <div class="container-fluid">
+            <footer>
+                    &copy; In Or Out
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://github.com/kathdoza/project_1"><span class="glyphicon glyphicon-folder-close"></span>
+                                GitHub Repo</a></li>
+                        <li><a href="https://www.food2fork.com/about/api"><span class="glyphicon glyphicon-log-in"></span>
+                                Food2Fork API</a></li>
+                        <li><a href="https://www.nutritionix.com/business/api"><span class="glyphicon glyphicon-log-in"></span>
+                                Nutritionix API</a></li>
+                    </ul>
+            </footer>
+        </div>
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
+    </body>
 </html>
