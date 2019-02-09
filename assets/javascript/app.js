@@ -144,7 +144,7 @@ $(document).ready(function () {
             console.log(menuItemName);
 
             $(".restaurantName").html("<b>Restaurant: </b>" + restaurant);
-            $(".menuItem").html("<b>Menu Item</b>" + menuItemName);
+            $(".menuItem").html("<b>Menu Item: </b>" + menuItemName);
 
 
 
@@ -174,13 +174,24 @@ $(document).ready(function () {
                 var cholPerc = Math.round((300 / cholestrol) * 100);
                 var sodPerc = Math.round((2400 / sodium) * 100);
 
+                if (satPerc == Infinity) {
+                    $(".nutxSatPerc").html(0);
+                }
+                if (cholPerc == Infinity) {
+                    $(".nutxCholPerc").html(0);
+                }
+                if (sodPerc == Infinity) {
+                    $(".nutxSodPerc").html(0);
+                }
+                else {
+                    $(".nutxSodPerc").html(sodPerc);
+                    $(".nutxCholPerc").html(cholPerc);
+                    $(".nutxSatPerc").html(satPerc);
+                }
                 $(".nutxSod").html(sodium);
-                $(".nutxSodPerc").html(sodPerc);
                 $(".nutxChol").html(cholestrol);
-                $(".nutxCholPerc").html(cholPerc);
                 $(".nutxTrans").html(transFat);
                 $(".nutxSatFat").html(satFat);
-                $(".nutxSatPerc").html(satPerc);
             };
 
             var protein = item.branded[i].full_nutrients[0].value;
@@ -203,11 +214,25 @@ $(document).ready(function () {
             var carbPerc = Math.round((300 / totalCarbohydrates) * 100);
             var fiberPerc = Math.round((25 / dietaryFiber) * 100);
 
+            if (fatPerc == Infinity) {
+                $(".nutxFatPerc").html(0);
+            }
+            if (carbPerc == Infinity) { 
+                $(".nutxCarbPerc").html(0);
+            }
+            if (fiberPerc == Infinity) { 
+                $(".nutxFiberPerc").html(fiberPerc);
+            }
+
+            else {
+                $(".nutxFatPerc").html(fatPerc);
+                $(".nutxCarbPerc").html(carbPerc);
+                $(".nutxFiberPerc").html(fiberPerc);
+            }
 
             $(".nutritionixServing").html("Serving Size " + servingQuantiy + " " + servingUnit);
             $(".nutxCalories").html("<b>Calories </b>" + calories);
             $(".nutxTotalFat").html(totalFat);
-            $(".nutxFatPerc").html(fatPerc);
             $(".nutxCalFromFat").html("<b>" + calFromFat + "</b>");
             // $(".nutxSatFat").html(satFat);
             // $(".nutxSatPerc").html(satPerc);
@@ -217,9 +242,7 @@ $(document).ready(function () {
             // $(".nutxSod").html(sodium);
             // $(".nutxSodPerc").html(sodPerc);
             $(".nutxCarb").html(totalCarbohydrates);
-            $(".nutxCarbPerc").html(carbPerc);
             $(".nutxFiber").html(dietaryFiber);
-            $(".nutxFiberPerc").html(fiberPerc);
             $(".nutxSugar").html(sugars);
             $(".nutxProtein").html(protein);
             // var fullNurtients = item.branded[i].full_nutrients;
