@@ -94,7 +94,7 @@ $(document).ready(function () {
                     recipeCholesterol = parseInt(recipeCholesterol + response.foods[i].nf_cholesterol);
                     recipeDietaryFiber = parseInt(recipeDietaryFiber + response.foods[i].nf_dietary_fiber);
                     recipeTotalFat = parseInt(recipeTotalFat + response.foods[i].nf_total_fat);
-                    recipeTransFat = parseInt(recipeTransFat + response.foods[i].nf_trans_fat);
+                    recipeTransFat = parseInt(recipeTransFat + response.foods[i].full_nutrients[12].value);
                     recipeSatFat = parseInt(recipeSatFat + response.foods[i].nf_saturated_fat);
                     recipeSodium = parseInt(recipeSodium + response.foods[i].nf_sodium);
                     recipeCarbs = parseInt(recipeCarbs + response.foods[i].nf_total_carbohydrate);
