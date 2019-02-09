@@ -220,13 +220,13 @@ $(document).ready(function () {
             var fiberPerc = Math.round((25 / dietaryFiber) * 100);
 
             if (fatPerc == Infinity) {
-                $(".nutxFatPerc").html(0);
+                $(".nutxFatPerc").html("0");
             }
             if (carbPerc == Infinity) { 
-                $(".nutxCarbPerc").html(0);
+                $(".nutxCarbPerc").html("0");
             }
             if (fiberPerc == Infinity) { 
-                $(".nutxFiberPerc").html(fiberPerc);
+                $(".nutxFiberPerc").html("0");
             }
 
             else {
