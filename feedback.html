@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Feedback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" type="text/css" href="assets/css/feedbackstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <!--HEADING-->
+  <div class="container-fluid">
+    <header class="row" id="logo">
+      <a href="index.html"></a>
+    </header>
+  <!--NAV-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="feedback.html"><span class="glyphicon glyphicon-pencil"></span> Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--JUMBOTRON-->
+    <div class="container">
+      <br>
+      <div class="jumbotron jumbotron-fluid text-center">
+        <h1 class="text-center">Your opinion is important to us.</h1>
+        <h2>This way we can keep improving our website.</h2>
+        <div class="alert">Thank you!
+          <form id="feedbackForm">
+            <br>
+            Your feedback has been sent!
+            <button type="button" class="close">&times;</button>
+        </div>
+      </div>
+      <div class="row">
+        <!--FEEDBACK-->
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              Please leave your feedback below:
+            </div>
+            <br>
+
+            <div class="card-body">
+              <form role="form">
+                <div class="form-group">
+                  <label for="name-input">Name:</label>
+                  <input class="form-control" id="name-input" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="feedback-input">
+                    <textarea class="form-control form-control-lg" id="feedback-input" placeholder="Your feedback."
+                      rows="5"></textarea>
+                </div>
+                <button class="btn btn-default" id="submit-button" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <br>
+    <!--FOOTER-->
+    <div class="container-fluid">
+      <footer>
+        &copy; In Or Out
+        <ul>
+          <a href="https://github.com/kathdoza/project_1"><span class="glyphicon glyphicon-folder-close"></span>
+            GitHub Repo</a>
+
+          <a href="https://www.food2fork.com/about/api"><span class="glyphicon glyphicon-log-in"></span>
+            Food2Fork API</a>
+
+          <a href="https://www.nutritionix.com/business/api"><span class="glyphicon glyphicon-log-in"></span>
+            Nutritionix API</a>
+        </ul>
+      </footer>
+    </div>
+
+  </div>
+
+      <script src="https://code.jquery.com/jquery.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
+      <!-- JAVASCRIPT -->
+      <script>
+
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCAyeRmzjdQiHl9D7aSjX4JktJs-K6y02I",
+          authDomain: "in-or-out-75042.firebaseapp.com",
+          databaseURL: "https://in-or-out-75042.firebaseio.com",
+          projectId: "in-or-out-75042",
+          storageBucket: "in-or-out-75042.appspot.com",
+          messagingSenderId: "716018681650"
+        };
+
+        firebase.initializeApp(config);
+
+        // Create a variable to reference the database
+        var database = firebase.database();
+
+        var name = "";
+        var feedback = "";
+
+        // Capture Button Click
+        $("#submit-button").on("click", function (event) {
+          // Don't refresh the page!
+          event.preventDefault();
+
+          var name = $("#name-input").val().trim();
+          var feedback = $("#feedback-input").val().trim();
+
+          database.ref().set({
+            name: name,
+            feedback: feedback,
+
+          });
+
+          database.ref().on("value", function (snapshot) {
+
+            // Print the initial data to the console.
+            console.log(snapshot.val());
+
+            // Log the value of the various properties
+            console.log(snapshot.val().name);
+            console.log(snapshot.val().feedback);
+
+            // Output all of the new information into the relevant HTML sections
+            $("#name-display").text(name);
+            $("#feedback-display").text(feedback);
+
+            // Change the HTML
+            $("#displayed-data").text(snapshot.val().name + " | " + snapshot.val().feedback);
+
+            // If any errors are experienced, log them to console.
+          }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+
+
+          });
+
+          // Show alert
+          document.querySelector('.alert').style.display = 'block';
+
+          // Hide alert after 3 seconds
+          setTimeout(function () {
+            document.querySelector('.alert').style.display = 'none';
+          }, 5000);
+
+          // Clear form
+          document.getElementById('feedbackForm').reset();
+
+
+        });
+
+      </script>
+
+</body>
+
+</html>
