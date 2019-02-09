@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript"
-        src="https://platform-api.sharethis.com/js/sharethis.js#property=5c55dfb6fec5f10011f261bd&product=inline-share-buttons"></script>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5c55dfb6fec5f10011f261bd&product=inline-share-buttons"></script>
 </head>
 
 <body>
@@ -59,16 +58,24 @@
         <div class="row recipe-center">
             <div class="col col-md-6">
                 <h2>In Option</h2>
+                <p id="recipe-link"></p>
                 <section class="performance-facts">
                     <header class="performance-facts__header">
                         <h1 class="performance-facts__title">Nutrition Facts</h1>
-                        <p id="recipe-serving-size">Serving Size </p>
+                        <p id="recipe-serving-size">Serving Size:</p>
                     </header>
                     <table class="performance-facts__table">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="small-info">
+                                    Amount Per Serving
+                                </th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
                                 <th colspan="2">
-                                    <div class="nutxCalories">
+                                    <div>
                                         <b>Calories</b>
                                         <span id="recipe-calories"></span>
                                     </div>
@@ -76,6 +83,11 @@
                                 <td>
                                     Calories from Fat
                                     <span id="recipe-cals-from-fat"></span>
+                                </td>
+                            </tr>
+                            <tr class="thick-row">
+                                <td colspan="3" class="small-info">
+                                    <b class="dailyVal">% Daily Value*</b>
                                 </td>
                             </tr>
                             <tr>
@@ -306,20 +318,20 @@
     </div>
     <!--FOOTER-->
     <div class="container-fluid">
-            <footer>
+        <footer>
             &copy; In Or Out
             <ul>
                 <a href="https://github.com/kathdoza/project_1"><span class="glyphicon glyphicon-folder-close"></span>
-                GitHub Repo</a>
-    
+                    GitHub Repo</a>
+
                 <a href="https://www.food2fork.com/about/api"><span class="glyphicon glyphicon-log-in"></span>
-                Food2Fork API</a>
-    
+                    Food2Fork API</a>
+
                 <a href="https://www.nutritionix.com/business/api"><span class="glyphicon glyphicon-log-in"></span>
-                Nutritionix API</a>
+                    Nutritionix API</a>
             </ul>
-            </footer>
-        </div>
+        </footer>
+    </div>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 

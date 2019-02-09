@@ -59,7 +59,7 @@ $(document).ready(function () {
         }).then(function (response) {
             var result = JSON.parse(response);
             console.log(result);
-            var imageURL = result.recipe.image_url;
+            var recipeUrl = result.recipe.source_url;
             var ingredients = result.recipe.ingredients;
 
             var recipeCalories = 0;
@@ -77,8 +77,8 @@ $(document).ready(function () {
                 url: "https://trackapi.nutritionix.com/v2/natural/nutrients",
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-app-id': '9d90687a',
-                    'x-app-key': 'ce2d2319cdcd23cd6bf1f7cc07da62b9',
+                    'x-app-id': '410d56eb',
+                    'x-app-key': '22d66faaa7be975b99988c8aa76f06af',
                     'x-remote-user-id': 0
                 },
                 data: JSON.stringify({
@@ -109,6 +109,8 @@ $(document).ready(function () {
                 var recipeCarbPerCal = Math.round((300 / recipeCarbs) * 100);
                 var recipeFiberPerCal = Math.round((25 / recipeDietaryFiber) * 100);
                 
+                $("#recipe-link").html("Click <a href='" + recipeUrl + "' target='_blank'>here<\/a> to see the selected recipe")
+                $("recipe-serving-size").html("Serving Size: see recipe")
                 $("#recipe-fat-cals").html(recipeFatPerCal);
                 $("#recipe-carb-cals").html(recipeCarbPerCal);
                 $("#recipe-fiber-cals").html(recipeFiberPerCal);
@@ -140,8 +142,8 @@ $(document).ready(function () {
         $.ajax({
             url: "https://trackapi.nutritionix.com/v2/search/instant",
             headers: {
-                "x-app-id": "40686332",
-                "x-app-key": "69eb15b5cbbdfc84f2451559c226b7b1"
+                'x-app-id': '410d56eb',
+                'x-app-key': '22d66faaa7be975b99988c8aa76f06af'
             },
             data: {
                 query: menuItem,
@@ -242,7 +244,7 @@ $(document).ready(function () {
                 $(".nutxCarbPerc").html(0);
             }
             if (fiberPerc == Infinity) {
-                $(".nutxFiberPerc").html(fiberPerc);
+                $(".nutxFiberPerc").html(0);
             }
 
             else {
