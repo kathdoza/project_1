@@ -180,13 +180,13 @@ $(document).ready(function () {
                 var sodPerc = Math.round((2400 / sodium) * 100);
 
                 if (satPerc == Infinity) {
-                    $(".nutxSatPerc").html(0);
+                    $(".nutxSatPerc").html("0");
                 }
                 if (cholPerc == Infinity) {
-                    $(".nutxCholPerc").html(0);
+                    $(".nutxCholPerc").html("0");
                 }
                 if (sodPerc == Infinity) {
-                    $(".nutxSodPerc").html(0);
+                    $(".nutxSodPerc").html("0");
                 }
                 else {
                     $(".nutxSodPerc").html(sodPerc);
