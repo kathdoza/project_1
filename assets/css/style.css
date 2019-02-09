@@ -77,12 +77,6 @@ footer {
 
 /* for the nutriti labels */
 
-
-.image {
-  width: 250px;
-  float: left;
-  margin: 20px;
-}
 body {
   font-size: small;
   line-height: 1.4;
@@ -153,4 +147,9 @@ p {
 
 .dailyVal {
     border-bottom: none;
+    float: right;
+}
+
+.percentage {
+    float:right;
 }

@@ -43,7 +43,9 @@
                     <label for="search-bar">
                         <input type="text" id="search-bar">
                         <input type="submit" id="add-food" class="btn btn-danger" value="Search">
-                </form>
+                        <p id="alert-text"></p>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -61,12 +63,12 @@
                         alt="burger" style="width:50%;"></p>
             </div>
             <div class="column" id="food-data2">
-                <h2>Nutritionix</h2>
+                <h2>Out Option</h2>
 
                 <section class="performance-facts">
                     <header class="performance-facts__header">
                         <h1 class="performance-facts__title">Nutrition Facts</h1>
-                        <p>Serving Size <div class="nutritionixServing"></div></p>
+                        <p class="nutritionixServing">Serving Size </p>
                     </header>
                     <table class="performance-facts__table">
                         <thead>
@@ -79,26 +81,29 @@
                         <tbody>
                             <tr>
                                 <th colspan="2">
-                                    <b>Calories</b>
-                                    200
+                                    <div class ="nutxCalories">
+                                     <b>Calories</b>
+
+                                    </div>
+                                    
                                 </th>
                                 <td>
                                     Calories from Fat
-                                    130
+                                    <span class="nutxCalFromFat"></span>
                                 </td>
                             </tr>
-                            <tr class="thick-row dailyVal">
+                            <tr class="thick-row">
                                 <td colspan="3" class="small-info">
-                                    <b>% Daily Value*</b>
+                                    <b class="dailyVal">% Daily Value*</b>
                                 </td>
                             </tr>
                             <tr>
                                 <th colspan="2">
                                     <b>Total Fat</b>
-                                    14g
+                                    <span class="nutxTotalFat"></span> g
                                 </th>
                                 <td>
-                                    <b>22%</b>
+                                    <b class="percentage"><span class="nutxFatPerc"></span>%</b>
                                 </td>
                             </tr>
                             <tr>
@@ -106,10 +111,10 @@
                                 </td>
                                 <th>
                                     Saturated Fat
-                                    9g
+                                    <span class="nutxSatFat"></span>g
                                 </th>
                                 <td>
-                                    <b>22%</b>
+                                    <b class="percentage"><span class="nutxSatPerc"></span>%</b>
                                 </td>
                             </tr>
                             <tr>
@@ -117,7 +122,7 @@
                                 </td>
                                 <th>
                                     Trans Fat
-                                    0g
+                                    <span class="nutxTrans"></span>g
                                 </th>
                                 <td>
                                 </td>
@@ -125,28 +130,28 @@
                             <tr>
                                 <th colspan="2">
                                     <b>Cholesterol</b>
-                                    55mg
+                                    <span class="nutxChol"></span>mg
                                 </th>
                                 <td>
-                                    <b>18%</b>
+                                    <b class="percentage"><span class="nutxCholPerc"></span>%</b>
                                 </td>
                             </tr>
                             <tr>
                                 <th colspan="2">
                                     <b>Sodium</b>
-                                    40mg
+                                    <span class="nutxSod"></span>mg
                                 </th>
                                 <td>
-                                    <b>2%</b>
+                                    <b class="percentage"><span class="nutxSodPerc"></span>%</b>
                                 </td>
                             </tr>
                             <tr>
                                 <th colspan="2">
                                     <b>Total Carbohydrate</b>
-                                    17g
+                                    <span class="nutxCarb"></span></span>g
                                 </th>
                                 <td>
-                                    <b>6%</b>
+                                    <b class="percentage"><span class="nutxCarbPerc"></span>%</b>
                                 </td>
                             </tr>
                             <tr>
@@ -154,10 +159,10 @@
                                 </td>
                                 <th>
                                     Dietary Fiber
-                                    1g
+                                    <span class="nutxFiber"></span>g
                                 </th>
                                 <td>
-                                    <b>4%</b>
+                                    <b class="percentage"><span class="nutxFiberPerc"></span>%</b>
                                 </td>
                             </tr>
                             <tr>
@@ -165,7 +170,7 @@
                                 </td>
                                 <th>
                                     Sugars
-                                    14g
+                                    <span class="nutxSugar"></span>g
                                 </th>
                                 <td>
                                 </td>
@@ -173,7 +178,7 @@
                             <tr class="thick-end">
                                 <th colspan="2">
                                     <b>Protein</b>
-                                    3g
+                                    <span class="nutxProtein"></span>g
                                 </th>
                                 <td>
                                 </td>
